@@ -19,7 +19,7 @@ class AdocaoList(APIView):
             adocao = serializer.save()
             enviar_email_confirmacao(adocao)
             return Response(serializer.data, status=HTTP_201_CREATED)
-            
+
         return Response(
             {
                 "errors": serializer.errors,
